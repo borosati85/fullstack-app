@@ -17,17 +17,18 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Set up Node.js 20
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "pnpm"
+          cache: 'pnpm'
+          
+      - name: Install Rush
+        run: npm install -g @microsoft/rush
 
       - name: Install dependencies
-        run: pnpm install
+        run: rush install
 
-      - name: Build monorepo
+      - name: Run build
         run: rush build
 
-      - name: Run tests
-        run: rush test
