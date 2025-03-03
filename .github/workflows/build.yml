@@ -21,7 +21,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'pnpm'
+
+      - name: Install Pnpm
+        run: npm install -g pnpm
           
       - name: Install Rush
         run: npm install -g @microsoft/rush
