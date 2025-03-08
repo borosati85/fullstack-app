@@ -6,9 +6,9 @@ on:
   push:
     branches:
       - develop
-      - "feature/*"
-      - "bugfix/*"
-      - "hotfix/*"      
+      - 'feature/*'
+      - 'bugfix/*'
+      - 'hotfix/*'
 
 jobs:
   build:
@@ -22,15 +22,14 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install Pnpm
-        run: npm install -g pnpm
-          
-      - name: Install Rush
-        run: npm install -g @microsoft/rush
+      # - name: Install Pnpm
+      #   run: npm install -g pnpm
 
-      - name: Install dependencies
-        run: rush install
+      - name: Verify Change Logs
+        run: node common/scripts/install-run-rush.js change --verify
 
-      - name: Run build
-        run: rush build
+      - name: Rush Install
+        run: node common/scripts/install-run-rush.js install
 
+      - name: Rush rebuild
+        run: node common/scripts/install-run-rush.js rebuild --verbose --production
