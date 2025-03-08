@@ -6,9 +6,9 @@ on:
   push:
     branches:
       - develop
-      - 'feature/*'
-      - 'bugfix/*'
-      - 'hotfix/*'
+      - "feature/*"
+      - "bugfix/*"
+      - "hotfix/*"
 
 jobs:
   build:
@@ -32,4 +32,4 @@ jobs:
         run: node common/scripts/install-run-rush.js install
 
       - name: Rush rebuild
-        run: node common/scripts/install-run-rush.js rebuild --verbose --production
+        run: node common/scripts/install-run-rush.js rebuild --verbose
