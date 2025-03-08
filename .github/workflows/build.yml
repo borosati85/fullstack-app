@@ -6,9 +6,9 @@ on:
   push:
     branches:
       - develop
-      - "feature/*"
-      - "bugfix/*"
-      - "hotfix/*"
+      - 'feature/*'
+      - 'bugfix/*'
+      - 'hotfix/*'
 
 jobs:
   build:
