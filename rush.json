@@ -5,7 +5,7 @@
   "nodeSupportedVersionRange": ">=18.20.3 <19.0.0 || >=20.14.0 <21.0.0",
   "repository": {
     "url": "https://github.com/borosati85/fullstack-app",
-    "defaultBranch": "main",
+    "defaultBranch": "develop",
     "defaultRemote": "origin"
   },
   "eventHooks": {
@@ -16,10 +16,11 @@
     "preRushx": [],
     "postRushx": []
   },
-   "variants": [],
+  "ensureConsistentVersions": true,
+  "variants": [],
   "telemetryEnabled": false,
   "hotfixChangeEnabled": false,
-  "allowedProjectTags": [ "tools", "frontend", "backend", "lib" ],
+  "allowedProjectTags": ["tools", "frontend", "backend", "lib"],
   "projects": [
     {
       "packageName": "@borosati85/frontend",
